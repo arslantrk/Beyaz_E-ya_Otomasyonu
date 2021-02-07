@@ -1,0 +1,34 @@
+﻿@using Beyaz_Eşya_Otomasyonu.Models.Sınıflar
+@model List<Departman>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:30px">
+    <tr>
+        <th>ID</th>
+        <th>Departman Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+
+    </tr>
+    @foreach (var d in Model)
+    {
+        <tr>
+            <td>
+                @d.DepartmanId
+            </td>
+            <td>
+                @d.DepartmanAd
+            </td>
+            <td><a href="/Departman/DepartmanSil/@d.DepartmanId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Departman/DepartmanGetir/@d.DepartmanId" class="btn btn-warning" style="color:white">Güncelle</a></td>
+            <td><a href="/Departman/DepartmanDetay/@d.DepartmanId" class="btn btn-default" style="background-color:brown; color:white;">Detay</a></td>
+
+        </tr>
+    }
+</table>
+<a href="/Departman/DepartmanEkle" class="btn btn-primary">Departman Ekle</a>
+

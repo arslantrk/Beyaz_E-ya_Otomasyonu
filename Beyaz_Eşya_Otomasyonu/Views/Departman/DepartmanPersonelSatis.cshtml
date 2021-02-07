@@ -1,0 +1,37 @@
+﻿@using Beyaz_Eşya_Otomasyonu.Models.Sınıflar
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "DepartmanPersonelSatis";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Departman Personel Satış</h2>
+<br />
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Personel Ad: @ViewBag.dpers</li>
+</ol>
+<table class="table table-condensed">
+    <tr>
+        <th>Satış Id</th>
+        <th>Ürün</th>
+        <th>Cari</th>
+        <th>Fiyat</th>
+        <th>Adet</th>
+        <th>Toplam</th>
+        <th>Tarih</th>
+        <th>Yazdır</th>
+    </tr>
+    @foreach (var d in Model)
+    {
+        <tr>
+            <td>@d.SatisId</td>
+            <td>@d.Urun.UrunAd</td>
+            <td>@d.Cariler.CariAd @d.Cariler.CariSoyad</td>
+            <td>@d.Fiyat</td>
+            <td>@d.Adet</td>
+            <td>@d.ToplamTutar</td>
+            <td>@d.Tarih</td>
+            <td><a href="#" class="btn btn-default" style="background-color:dodgerblue">Yazdır</a></td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,17 @@
+﻿@model Beyaz_Eşya_Otomasyonu.Models.Sınıflar.Kategori
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Kategori Güncelleme</h2>
+<br />
+@using (Html.BeginForm("KategoriGüncelle", "Kategori", FormMethod.Post))//kategorigüncelle actionresult tanımlaması,kategori controlleri,nezaman çalışıcak bu method
+{
+    <div class="form-group">
+        @Html.LabelFor(x=>x.KategoriAd)
+        @Html.TextBoxFor(x => x.KategoriAd,new { @class = "form-control" })
+        @Html.HiddenFor(x=>x.KategoriId)
+    </div>
+    <button class="btn btn-warning">Güncelle</button>
+}

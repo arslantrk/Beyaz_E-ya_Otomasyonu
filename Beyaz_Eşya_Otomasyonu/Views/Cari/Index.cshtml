@@ -1,0 +1,35 @@
+﻿@using Beyaz_Eşya_Otomasyonu.Models.Sınıflar
+@model List<Cariler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Index</h2>
+<br />
+<table class="table table-striped">
+    <tr>
+        <th>Cari Id</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Şehir</th>
+        <th>Mail</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var c in Model)
+    {
+<tr>
+    <td>@c.CariId</td>
+    <td>@c.CariAd</td>
+    <td>@c.CariSoyad</td>
+    <td>@c.CariSehir</td>
+    <td>@c.CariMail</td>
+    <td><a href="/Cari/CariSil/@c.CariId/"class="btn btn-danger" style="color:white">Sil</a></td>
+    <td><a href="/Cari/CariGetir/@c.CariId/"class="btn btn-warning" style="color:white">Güncelle</a></td>
+    <td><a class="btn btn-default" style="background-color:royalblue; color:white">Satış Geçmişi</a></td>
+</tr>
+    }
+</table>
+<a href="/Cari/CariEkle" class="btn btn-info">Yeni Cari Ekle</a>

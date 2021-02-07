@@ -1,0 +1,32 @@
+﻿@using  Beyaz_Eşya_Otomasyonu.Models.Sınıflar
+@model  List<Kategori>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:30px">
+    <tr>
+        <th>ID</th>
+        <th>Kategori Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+    @foreach (var k in Model)
+    {
+<tr>
+    <td>
+        @k.KategoriId
+    </td>
+    <td>
+        @k.KategoriAd
+    </td>
+    <td><a href="/Kategori/KategoriSil/@k.KategoriId" class="btn btn-danger">Sil</a></td>
+    <td><a href="/Kategori/KategoriGetir/@k.KategoriId" class="btn btn-success">Güncelle</a></td>
+
+</tr>
+    }
+</table>
+<a href="/Kategori/KategoriEkle" class="btn btn-primary">Kategori Ekle</a>
+

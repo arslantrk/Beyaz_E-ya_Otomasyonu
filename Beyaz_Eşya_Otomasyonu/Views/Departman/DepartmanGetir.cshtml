@@ -1,0 +1,18 @@
+﻿@model Beyaz_Eşya_Otomasyonu.Models.Sınıflar.Departman
+@{
+    ViewBag.Title = "DepartmanGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Departman Güncelleme</h2>
+<br />
+@using (Html.BeginForm("DepartmanGuncelle", "Departman", FormMethod.Post))//Departmangüncelle actionresult tanımlaması,Departman controlleri,nezaman çalışıcak bu method
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.DepartmanAd)
+        @Html.TextBoxFor(x => x.DepartmanAd, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.DepartmanId)
+    </div>
+    <button class="btn btn-default"style="background-color:Highlight">Güncelle</button>
+}
+

@@ -1,0 +1,28 @@
+﻿@model Beyaz_Eşya_Otomasyonu.Models.Sınıflar.Cariler
+@{
+    ViewBag.Title = "CariGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Cari Güncelleme</h2>
+<br />
+@using (Html.BeginForm("CariGuncelle", "Cari", FormMethod.Post))//CariGuncelle actionresult tanımlaması,cari controlleri,nezaman çalışıcak bu method
+{
+<div class="form-group">
+    @Html.LabelFor(x => x.CariAd)
+    @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+    @Html.HiddenFor(x => x.CariId)
+    <br/>
+    @Html.LabelFor(x => x.CariSoyad)
+    @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CariSehir)
+    @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CariMail)
+    @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+</div>
+    <button class="btn btn-default" style="background-color:Highlight">Güncelle</button>
+}
+
